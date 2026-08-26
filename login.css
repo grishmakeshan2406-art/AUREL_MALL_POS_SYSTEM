@@ -35,7 +35,7 @@ body {
             rgba(20, 18, 17, 0.55),
             rgba(20, 18, 17, 0.75)
         ),
-        url("photos/mall.jpeg");
+        url("mall.jpeg");
 
     background-size: cover;
     background-position: center;
