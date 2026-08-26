@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="reports.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                 <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                Reports
+            </div>
+
+            <a href="shopowner.html" class="back-button">
+                ← Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main class="reports-dashboard">
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="reports-intro">
+
+            <p class="small-text">
+                SHOP ANALYTICS
+            </p>
+
+            <h1>
+                Reports
+            </h1>
+
+            <p>
+                Track your shop's performance,
+                revenue and product activity.
+            </p>
+
+        </section>
+
+
+        <!-- OVERVIEW -->
+
+        <section class="overview">
+
+            <h2>
+                Overview
+            </h2>
+
+            <div class="report-summary">
+
+
+                <div class="report-card">
+
+                    <p>
+                        Total Revenue
+                    </p>
+
+                    <h2 id="totalRevenue">
+                        ₹0
+                    </h2>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <p>
+                        Total Orders
+                    </p>
+
+                    <h2 id="totalOrders">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <p>
+                        Products Sold
+                    </p>
+
+                    <h2 id="productsSold">
+                        0
+                    </h2>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <p>
+                        Average Order Value
+                    </p>
+
+                    <h2 id="averageOrder">
+                        ₹0
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SALES OVERVIEW -->
+
+        <section class="sales-overview">
+
+            <h2>
+                Sales Overview
+            </h2>
+
+            <div class="sales-options">
+
+                <button onclick="showSales('daily')">
+                    Daily
+                </button>
+
+                <button onclick="showSales('weekly')">
+                    Weekly
+                </button>
+
+                <button onclick="showSales('monthly')">
+                    Monthly
+                </button>
+
+            </div>
+
+            <div id="salesResult">
+
+                Select a time period to view sales.
+
+            </div>
+
+        </section>
+
+
+        <!-- TOP PRODUCTS -->
+
+        <section class="top-products">
+
+            <h2>
+                Top Products
+            </h2>
+
+            <div class="product-table">
+
+                <div class="product-row product-heading">
+
+                    <span>
+                        Product
+                    </span>
+
+                    <span>
+                        Units Sold
+                    </span>
+
+                    <span>
+                        Revenue
+                    </span>
+
+                </div>
+
+
+                <div class="product-row">
+
+                    <span>
+                        Product 01
+                    </span>
+
+                    <span>
+                        45
+                    </span>
+
+                    <span>
+                        ₹18,000
+                    </span>
+
+                </div>
+
+
+                <div class="product-row">
+
+                    <span>
+                        Product 02
+                    </span>
+
+                    <span>
+                        32
+                    </span>
+
+                    <span>
+                        ₹12,800
+                    </span>
+
+                </div>
+
+
+                <div class="product-row">
+
+                    <span>
+                        Product 03
+                    </span>
+
+                    <span>
+                        21
+                    </span>
+
+                    <span>
+                        ₹8,400
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="reports.js"></script>
+
+</body>
+
+</html>

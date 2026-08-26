@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mall Admin | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                Mall Admin
+            </div>
+
+            <div class="admin-actions">
+
+                <a href="admin.html">
+                    Dashboard
+                </a>
+
+                <a href="#shops">
+                    Shops
+                </a>
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="#orders">
+                    Orders
+                </a>
+
+                <a href="index.html">
+                    ← Mall
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-dashboard">
+
+
+        <!-- WELCOME -->
+
+        <section class="admin-welcome">
+
+            <p class="small-text">
+                SMARTGEN MALL ADMINISTRATION
+            </p>
+
+            <h1>
+                Mall Overview
+            </h1>
+
+            <p>
+                Monitor shops, products, orders and overall
+                mall activity from one place.
+            </p>
+
+        </section>
+
+
+
+        <!-- SEARCH -->
+
+        <section class="admin-search">
+
+            <input
+                type="text"
+                id="adminSearch"
+                placeholder="Search shops, products or orders..."
+            >
+
+            <button onclick="searchAdmin()">
+                Search
+            </button>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="admin-summary">
+
+            <div class="summary-card">
+
+                <p>
+                    Total Shops
+                </p>
+
+                <h2 id="totalShops">
+                    12
+                </h2>
+
+                <span>
+                    Active shops
+                </span>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Total Products
+                </p>
+
+                <h2 id="totalProducts">
+                    248
+                </h2>
+
+                <span>
+                    Listed products
+                </span>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Today's Orders
+                </p>
+
+                <h2 id="todayOrders">
+                    86
+                </h2>
+
+                <span>
+                    Orders received
+                </span>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Today's Revenue
+                </p>
+
+                <h2 id="todayRevenue">
+                    ₹1,28,450
+                </h2>
+
+                <span>
+                    Total sales
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ADMIN FUNCTIONS -->
+
+        <section class="admin-functions">
+
+            <div class="section-heading">
+
+                <p class="small-text">
+                    MANAGEMENT
+                </p>
+
+                <h2>
+                    Mall Management
+                </h2>
+
+            </div>
+
+
+            <div class="function-container">
+
+
+                <!-- SHOPS -->
+
+                <div class="function-card">
+
+                    <p class="card-number">
+                        01
+                    </p>
+
+                    <h3>
+                        Shops
+                    </h3>
+
+                    <p>
+                        View and manage shops operating
+                        inside SmartGen Mall.
+                    </p>
+
+                    <button
+                        class="admin-button"
+                        onclick="manageShops()"
+                    >
+                        Manage Shops →
+                    </button>
+
+                </div>
+
+
+
+                <!-- PRODUCTS -->
+
+                <div class="function-card">
+
+                    <p class="card-number">
+                        02
+                    </p>
+
+                    <h3>
+                        Products
+                    </h3>
+
+                    <p>
+                        Monitor products listed by different
+                        shops across the mall.
+                    </p>
+
+                    <button
+                        class="admin-button"
+                        onclick="manageProducts()"
+                    >
+                        Manage Products →
+                    </button>
+
+                </div>
+
+
+
+                <!-- ORDERS -->
+
+                <div class="function-card">
+
+                    <p class="card-number">
+                        03
+                    </p>
+
+                    <h3>
+                        Orders
+                    </h3>
+
+                    <p>
+                        Track customer orders and monitor
+                        their current status.
+                    </p>
+
+                    <button
+                        class="admin-button"
+                        onclick="viewOrders()"
+                    >
+                        View Orders →
+                    </button>
+
+                </div>
+
+
+
+                <!-- REPORTS -->
+
+                <div class="function-card">
+
+                    <p class="card-number">
+                        04
+                    </p>
+
+                    <h3>
+                        Reports
+                    </h3>
+
+                    <p>
+                        Analyze mall performance, revenue
+                        and overall activity.
+                    </p>
+
+                    <button
+                        class="admin-button"
+                        onclick="viewReports()"
+                    >
+                        View Reports →
+                    </button>
+
+                </div>
+
+
+
+                <!-- INVENTORY -->
+
+                <div class="function-card">
+
+                    <p class="card-number">
+                        05
+                    </p>
+
+                    <h3>
+                        Inventory
+                    </h3>
+
+                    <p>
+                        Monitor stock levels and identify
+                        products that need attention.
+                    </p>
+
+                    <button
+                        class="admin-button"
+                        onclick="viewInventory()"
+                    >
+                        View Inventory →
+                    </button>
+
+                </div>
+
+
+
+                <!-- USERS -->
+
+                <div class="function-card">
+
+                    <p class="card-number">
+                        06
+                    </p>
+
+                    <h3>
+                        Users
+                    </h3>
+
+                    <p>
+                        Monitor customers and shop owners
+                        registered on the platform.
+                    </p>
+
+                    <button
+                        class="admin-button"
+                        onclick="viewUsers()"
+                    >
+                        Manage Users →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SHOPS SECTION -->
+
+        <section id="shops" class="data-section">
+
+            <div class="section-heading">
+
+                <p class="small-text">
+                    SHOP MANAGEMENT
+                </p>
+
+                <h2>
+                    Registered Shops
+                </h2>
+
+            </div>
+
+
+            <div class="data-table" id="shopTable">
+
+
+                <div class="data-row table-header">
+
+                    <span>
+                        Shop
+                    </span>
+
+                    <span>
+                        Category
+                    </span>
+
+                    <span>
+                        Products
+                    </span>
+
+                    <span>
+                        Status
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Style Studio
+                    </span>
+
+                    <span>
+                        Fashion
+                    </span>
+
+                    <span>
+                        42
+                    </span>
+
+                    <span class="status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Tech World
+                    </span>
+
+                    <span>
+                        Electronics
+                    </span>
+
+                    <span>
+                        68
+                    </span>
+
+                    <span class="status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Home & Living
+                    </span>
+
+                    <span>
+                        Lifestyle
+                    </span>
+
+                    <span>
+                        51
+                    </span>
+
+                    <span class="status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Cafe Corner
+                    </span>
+
+                    <span>
+                        Food & Cafe
+                    </span>
+
+                    <span>
+                        27
+                    </span>
+
+                    <span class="status inactive">
+                        Inactive
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PRODUCTS SECTION -->
+
+        <section id="products" class="data-section">
+
+            <div class="section-heading">
+
+                <p class="small-text">
+                    PRODUCT MANAGEMENT
+                </p>
+
+                <h2>
+                    Recent Products
+                </h2>
+
+            </div>
+
+
+            <div class="data-table">
+
+
+                <div class="data-row table-header">
+
+                    <span>
+                        Product
+                    </span>
+
+                    <span>
+                        Shop
+                    </span>
+
+                    <span>
+                        Price
+                    </span>
+
+                    <span>
+                        Stock
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Classic T-Shirt
+                    </span>
+
+                    <span>
+                        Style Studio
+                    </span>
+
+                    <span>
+                        ₹899
+                    </span>
+
+                    <span>
+                        32
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Wireless Earbuds
+                    </span>
+
+                    <span>
+                        Tech World
+                    </span>
+
+                    <span>
+                        ₹1,999
+                    </span>
+
+                    <span>
+                        18
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Smart Watch
+                    </span>
+
+                    <span>
+                        Tech World
+                    </span>
+
+                    <span>
+                        ₹2,499
+                    </span>
+
+                    <span>
+                        9
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        Tote Bag
+                    </span>
+
+                    <span>
+                        Home & Living
+                    </span>
+
+                    <span>
+                        ₹699
+                    </span>
+
+                    <span>
+                        24
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ORDERS -->
+
+        <section id="orders" class="data-section">
+
+            <div class="section-heading">
+
+                <p class="small-text">
+                    ORDER MANAGEMENT
+                </p>
+
+                <h2>
+                    Recent Orders
+                </h2>
+
+            </div>
+
+
+            <div class="data-table">
+
+
+                <div class="data-row table-header">
+
+                    <span>
+                        Order ID
+                    </span>
+
+                    <span>
+                        Customer
+                    </span>
+
+                    <span>
+                        Amount
+                    </span>
+
+                    <span>
+                        Status
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        SGM-82453121
+                    </span>
+
+                    <span>
+                        Customer 01
+                    </span>
+
+                    <span>
+                        ₹2,899
+                    </span>
+
+                    <span class="status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        SGM-82453122
+                    </span>
+
+                    <span>
+                        Customer 02
+                    </span>
+
+                    <span>
+                        ₹1,999
+                    </span>
+
+                    <span class="status processing">
+                        Processing
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        SGM-82453123
+                    </span>
+
+                    <span>
+                        Customer 03
+                    </span>
+
+                    <span>
+                        ₹4,250
+                    </span>
+
+                    <span class="status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="data-row">
+
+                    <span>
+                        SGM-82453124
+                    </span>
+
+                    <span>
+                        Customer 04
+                    </span>
+
+                    <span>
+                        ₹799
+                    </span>
+
+                    <span class="status pending">
+                        Pending
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ACTIVITY -->
+
+        <section class="activity-section">
+
+            <div class="section-heading">
+
+                <p class="small-text">
+                    SYSTEM ACTIVITY
+                </p>
+
+                <h2>
+                    Recent Activity
+                </h2>
+
+            </div>
+
+
+            <div id="activityList" class="activity-list">
+
+                <div class="activity-item">
+
+                    <span class="activity-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            New order received
+                        </strong>
+
+                        <p>
+                            Order SGM-82453124 was placed.
+                        </p>
+
+                    </div>
+
+                    <small>
+                        Just now
+                    </small>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <span class="activity-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            Product added
+                        </strong>
+
+                        <p>
+                            Wireless Earbuds were added to Tech World.
+                        </p>
+
+                    </div>
+
+                    <small>
+                        20 min ago
+                    </small>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <span class="activity-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            Shop updated
+                        </strong>
+
+                        <p>
+                            Style Studio updated its shop information.
+                        </p>
+
+                    </div>
+
+                    <small>
+                        1 hour ago
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="sales.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                 <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                SALES
+            </div>
+
+            <a href="shopowner.html" class="back-button">
+                ← Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="sales-page">
+
+
+        <!-- INTRO -->
+
+        <section class="sales-intro">
+
+            <p class="section-label">
+                SHOP PERFORMANCE
+            </p>
+
+            <h1>
+                Sales
+            </h1>
+
+            <p>
+                View your completed transactions and sales performance.
+            </p>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="sales-summary">
+
+
+            <div class="sales-card">
+
+                <p>
+                    TOTAL ORDERS
+                </p>
+
+                <h2 id="totalOrders">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="sales-card">
+
+                <p>
+                    TOTAL SALES
+                </p>
+
+                <h2 id="totalSales">
+                    ₹0
+                </h2>
+
+            </div>
+
+
+            <div class="sales-card">
+
+                <p>
+                    ITEMS SOLD
+                </p>
+
+                <h2 id="itemsSold">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="sales-card">
+
+                <p>
+                    AVERAGE ORDER
+                </p>
+
+                <h2 id="averageOrder">
+                    ₹0
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- TRANSACTIONS -->
+
+        <section class="transactions-section">
+
+
+            <div class="table-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        TRANSACTION HISTORY
+                    </p>
+
+                    <h2>
+                        Recent Sales
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="transactions-table">
+
+
+                <!-- HEADER -->
+
+                <div class="transaction-row transaction-header">
+
+                    <span>
+                        Order ID
+                    </span>
+
+                    <span>
+                        Date
+                    </span>
+
+                    <span>
+                        Items
+                    </span>
+
+                    <span>
+                        Amount
+                    </span>
+
+                    <span>
+                        Action
+                    </span>
+
+                </div>
+
+
+                <!-- TRANSACTIONS -->
+
+                <div id="salesList">
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- BILL MODAL -->
+
+    <div
+        class="bill-modal"
+        id="billModal"
+    >
+
+        <div class="bill-box">
+
+
+            <button
+                class="close-modal"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+
+            <p class="section-label">
+                SMARTGEN MALL
+            </p>
+
+
+            <h2>
+                Transaction Details
+            </h2>
+
+
+            <div id="billDetails">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="sales.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CAFE | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="shop.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+
+                <img src="aurel1.png">
+
+            </div>
+
+
+            <div class="page-title">
+                FOOD & CAFE
+            </div>
+
+
+            <div class="nav-actions">
+
+                <a href="customer.html">
+                    ← Customer
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <section class="shop-header">
+
+            <p class="small-text">
+                SMARTGEN MALL
+            </p>
+
+            <h1 id="shopName">
+                FOOD & CAFE
+            </h1>
+
+            <p id="shopDescription">
+                Explore food, beverages and dining options.
+            </p>
+
+        </section>
+
+
+
+        <section class="shop-products">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-text">
+                        PRODUCTS
+                    </p>
+
+                    <h2>
+                        Available Items
+                    </h2>
+
+                </div>
+
+
+                <select id="sortProducts">
+
+                    <option value="default">
+                        Sort Products
+                    </option>
+
+                    <option value="low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="high">
+                        Price: High to Low
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div
+                id="productContainer"
+                class="product-container"
+            >
+
+
+                <!-- CAFFE LATTE -->
+
+                <div
+                    class="product-card"
+                    data-price="299"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="latte.jpeg"
+                            alt="Caffe Latte"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Caffe Latte
+                    </h3>
+
+
+                    <p>
+                        Smooth espresso blended with creamy milk.
+                    </p>
+
+
+                    <strong>
+                        ₹299
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Caffe Latte',
+                            299,
+                            'latte.jpeg',
+                            'Food & Cafe'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+
+                <!-- CAPPUCCINO -->
+
+                <div
+                    class="product-card"
+                    data-price="289"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="capp.jpeg"
+                            alt="Cappuccino"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Cappuccino
+                    </h3>
+
+
+                    <p>
+                        Rich espresso topped with creamy milk foam.
+                    </p>
+
+
+                    <strong>
+                        ₹289
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Cappuccino',
+                            289,
+                            'capp.jpeg',
+                            'Food & Cafe'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+
+                <!-- CHOCOLATE CHIP COOKIE -->
+
+                <div
+                    class="product-card"
+                    data-price="199"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="cookie.webp"
+                            alt="Chocolate Chip Cookie"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Chocolate Chip Cookie
+                    </h3>
+
+
+                    <p>
+                        Soft, chewy cookie packed with chocolate chips.
+                    </p>
+
+
+                    <strong>
+                        ₹199
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Chocolate Chip Cookie',
+                            199,
+                            'cookie.webp',
+                            'Food & Cafe'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+
+                <!-- BLUEBERRY MUFFIN -->
+
+                <div
+                    class="product-card"
+                    data-price="249"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="muffin1.jpeg"
+                            alt="Blueberry Muffin"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Blueberry Muffin
+                    </h3>
+
+
+                    <p>
+                        Soft and delicious muffin filled with blueberries.
+                    </p>
+
+
+                    <strong>
+                        ₹249
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Blueberry Muffin',
+                            249,
+                            'muffin1.jpeg',
+                            'Food & Cafe'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="shop.js"></script>
+
+</body>
+
+</html>

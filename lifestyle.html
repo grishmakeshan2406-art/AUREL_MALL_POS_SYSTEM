@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LIFESTYLE | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="shop.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+
+                <img src="aurel1.png">
+
+            </div>
+
+
+            <div class="page-title">
+                LIFESTYLE
+            </div>
+
+
+            <div class="nav-actions">
+
+                <a href="customer.html">
+                    ← Customer
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= SHOP HEADER ================= -->
+
+        <section class="shop-header">
+
+            <p class="small-text">
+                SMARTGEN MALL
+            </p>
+
+            <h1 id="shopName">
+                LIFESTYLE
+            </h1>
+
+            <p id="shopDescription">
+                Discover products for your everyday lifestyle.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <section class="shop-products">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-text">
+                        PRODUCTS
+                    </p>
+
+                    <h2>
+                        Available Products
+                    </h2>
+
+                </div>
+
+
+                <select id="sortProducts">
+
+                    <option value="default">
+                        Sort Products
+                    </option>
+
+                    <option value="low">
+                        Price: Low to High
+                    </option>
+
+                    <option value="high">
+                        Price: High to Low
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div
+                id="productContainer"
+                class="product-container"
+            >
+
+
+                <!-- ================= PRODUCT 1 ================= -->
+
+                <div
+                    class="product-card"
+                    data-price="699"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="perfume.webp"
+                            alt="Perfume"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Perfume
+                    </h3>
+
+
+                    <p>
+                        A refreshing fragrance for every occasion.
+                    </p>
+
+
+                    <strong>
+                        ₹699
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Perfume',
+                            699,
+                            'perfume.webp',
+                            'Lifestyle'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= PRODUCT 2 ================= -->
+
+                <div
+                    class="product-card"
+                    data-price="1299"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="lamp.jpeg"
+                            alt="Table Lamp"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Table Lamp
+                    </h3>
+
+
+                    <p>
+                        Add warmth and style to your living space.
+                    </p>
+
+
+                    <strong>
+                        ₹1299
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Table Lamp',
+                            1299,
+                            'lamp.jpeg',
+                            'Lifestyle'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= PRODUCT 3 ================= -->
+
+                <div
+                    class="product-card"
+                    data-price="1199"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="backpack.jpeg"
+                            alt="Backpack"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Backpack
+                    </h3>
+
+
+                    <p>
+                        Spacious and perfect for daily use.
+                    </p>
+
+
+                    <strong>
+                        ₹1199
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Backpack',
+                            1199,
+                            'backpack.jpeg',
+                            'Lifestyle'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+
+                <!-- ================= PRODUCT 4 ================= -->
+
+                <div
+                    class="product-card"
+                    data-price="1599"
+                >
+
+                    <div class="product-image">
+
+                        <img
+                            src="cushion.jpeg"
+                            alt="Cushion Set"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Cushion Set
+                    </h3>
+
+
+                    <p>
+                        Soft and stylish comfort for your home.
+                    </p>
+
+
+                    <strong>
+                        ₹1599
+                    </strong>
+
+
+                    <button
+                        onclick="addToCart(
+                            'Cushion Set',
+                            1599,
+                            'cushion.jpeg',
+                            'Lifestyle'
+                        )"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="shop.js"></script>
+
+</body>
+
+</html>

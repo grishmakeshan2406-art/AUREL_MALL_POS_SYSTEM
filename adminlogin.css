@@ -1,0 +1,294 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #24211f;
+    color: #e8e4df;
+    min-height: 100vh;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.left {
+    width: 50%;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(20, 18, 17, 0.55),
+            rgba(20, 18, 17, 0.75)
+        ),
+        url("photos/mall.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 40px;
+}
+
+/* Brand name */
+.overlay h1 {
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #f1eee9;
+    margin-bottom: 15px;
+}
+
+/* Tagline */
+.overlay p {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #bcb6ae;
+}
+
+/* ================================
+   RIGHT SIDE
+================================ */
+
+.right {
+    width: 50%;
+    min-height: 100vh;
+
+    background: #f0ede8;
+    color: #292624;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 70px 100px;
+
+    position: relative;
+}
+
+/* Back button */
+.back {
+    position: absolute;
+    top: 35px;
+    left: 50px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: #625d58;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+
+    transition: 0.3s ease;
+}
+
+.back i {
+    font-size: 12px;
+}
+
+.back:hover {
+    color: #1f1d1b;
+}
+
+/* Portal heading */
+.right h4 {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    color: #9a7450;
+
+    margin-bottom: 18px;
+}
+
+/* Welcome heading */
+.right h2 {
+    font-size: 38px;
+    font-weight: 500;
+
+    color: #292624;
+
+    margin-bottom: 10px;
+}
+
+/* Description */
+.right > p {
+    font-size: 14px;
+    font-weight: 300;
+
+    color: #77716b;
+
+    margin-bottom: 40px;
+}
+
+/* ================================
+   FORM
+================================ */
+
+#adminLogin {
+    width: 100%;
+    max-width: 430px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+#adminLogin label {
+    font-size: 12px;
+    font-weight: 500;
+
+    color: #514c47;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 8px;
+}
+
+/* Inputs */
+#adminLogin input {
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid #c9c3bc;
+    background: #f7f5f2;
+
+    padding: 0 15px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+
+    color: #292624;
+
+    outline: none;
+
+    margin-bottom: 24px;
+
+    transition: 0.3s ease;
+}
+
+/* Placeholder */
+#adminLogin input::placeholder {
+    color: #aaa49e;
+    font-weight: 300;
+}
+
+/* Input focus */
+#adminLogin input:focus {
+    border-color: #8d6849;
+    background: #ffffff;
+}
+
+/* Login button */
+#adminLogin button {
+    width: 100%;
+    height: 52px;
+
+    border: 1px solid #302c29;
+
+    background: #292624;
+    color: #f4f1ed;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+
+    transition: 0.3s ease;
+}
+
+/* Button hover */
+#adminLogin button:hover {
+    background: #9a7450;
+    border-color: #9a7450;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .left {
+        width: 100%;
+        min-height: 40vh;
+    }
+
+    .right {
+        width: 100%;
+        min-height: 60vh;
+
+        padding: 70px 50px;
+    }
+
+    .overlay h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .left {
+        min-height: 32vh;
+    }
+
+    .right {
+        padding: 70px 30px 40px;
+    }
+
+    .back {
+        left: 30px;
+        top: 25px;
+    }
+
+    .right h2 {
+        font-size: 30px;
+    }
+
+    .overlay h1 {
+        font-size: 30px;
+        letter-spacing: 4px;
+    }
+
+    .overlay p {
+        font-size: 12px;
+    }
+}

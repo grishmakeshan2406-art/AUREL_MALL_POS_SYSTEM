@@ -1,0 +1,705 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eee9e1;
+    color: #24211e;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding: 25px 55px;
+
+    background: rgba(238, 233, 225, 0.78);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(36, 33, 30, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 90px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+.page-title {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #90765c;
+}
+
+.back-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    border: 1px solid #b8aa9b;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    color: #4c4741;
+
+    background: rgba(255,255,255,0.25);
+
+    transition: 0.35s ease;
+}
+
+.back-button:hover {
+    background: #24211e;
+
+    color: #eee9e1;
+
+    transform: translateX(-5px);
+}
+
+
+/* ================= MAIN ================= */
+
+.reports-dashboard {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 80px 50px 100px;
+}
+
+
+/* ================= REPORT HERO ================= */
+
+.reports-intro {
+    position: relative;
+
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+
+    margin-bottom: 85px;
+
+    overflow: hidden;
+
+    color: white;
+
+    border-radius: 0 0 35px 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(36, 33, 30, 0.88),
+            rgba(36, 33, 30, 0.48),
+            rgba(36, 33, 30, 0.2)
+        ),
+        url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    animation: heroEnter 1s ease forwards;
+}
+
+
+/* HERO IMAGE ANIMATION */
+
+.reports-intro::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.03);
+
+    z-index: 0;
+
+    animation: reportHeroZoom 12s ease-in-out infinite alternate;
+}
+
+.reports-intro::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 35%,
+            rgba(20,18,16,0.5)
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+@keyframes reportHeroZoom {
+
+    from {
+        transform: scale(1.03);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+
+}
+
+
+@keyframes heroEnter {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* HERO TEXT */
+
+.reports-intro > * {
+    position: relative;
+
+    z-index: 3;
+}
+
+.small-text {
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: #d2b894;
+
+    margin-bottom: 20px;
+}
+
+.reports-intro h1 {
+    font-size: clamp(50px, 6vw, 82px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.reports-intro p:last-child {
+    max-width: 650px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.78);
+}
+
+
+/* ================= SECTION HEADINGS ================= */
+
+section h2 {
+    font-size: 35px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= OVERVIEW ================= */
+
+.overview {
+    margin-bottom: 90px;
+
+    animation: fadeUp 0.8s ease 0.15s both;
+}
+
+.report-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* ================= REPORT CARDS ================= */
+
+.report-card {
+    position: relative;
+
+    min-height: 155px;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    border: 1px solid #c8bdb1;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.45),
+            rgba(215,208,198,0.25)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(70,60,50,0.06);
+
+    transition: 0.4s ease;
+}
+
+.report-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    right: -70px;
+
+    top: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(155,128,101,0.14);
+
+    filter: blur(25px);
+
+    transition: 0.5s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #a9947e;
+
+    box-shadow:
+        0 20px 45px rgba(70,60,50,0.12);
+}
+
+.report-card:hover::before {
+    transform: scale(1.4);
+}
+
+.report-card p {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #756b62;
+
+    margin-bottom: 20px;
+}
+
+.report-card h2 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    margin: 0;
+
+    color: #28231e;
+}
+
+
+/* ================= SALES OVERVIEW ================= */
+
+.sales-overview {
+    margin-bottom: 90px;
+
+    animation: fadeUp 0.8s ease 0.25s both;
+}
+
+.sales-options {
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+
+    flex-wrap: wrap;
+}
+
+.sales-options button {
+    padding: 11px 22px;
+
+    border: 1px solid #b8aa9b;
+
+    border-radius: 40px;
+
+    background: rgba(255,255,255,0.2);
+
+    color: #24211e;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    transition: 0.35s ease;
+}
+
+.sales-options button:hover {
+    background: #24211e;
+
+    color: #eee9e1;
+
+    transform: translateY(-3px);
+}
+
+.sales-options button:active {
+    transform: scale(0.96);
+}
+
+
+/* ================= SALES RESULT ================= */
+
+#salesResult {
+    min-height: 170px;
+
+    padding: 35px;
+
+    border: 1px solid #c5baae;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.4),
+            rgba(215,208,198,0.2)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(70,60,50,0.06);
+
+    animation: resultEnter 0.4s ease;
+}
+
+@keyframes resultEnter {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+#salesResult h3 {
+    font-size: 25px;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+
+    color: #28231e;
+}
+
+#salesResult p {
+    margin: 10px 0;
+
+    color: #756b62;
+
+    line-height: 1.6;
+}
+
+
+/* ================= TOP PRODUCTS ================= */
+
+.top-products {
+    margin-bottom: 90px;
+
+    animation: fadeUp 0.8s ease 0.35s both;
+}
+
+
+/* ================= PRODUCT TABLE ================= */
+
+.product-table {
+    border: 1px solid #c5baae;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: rgba(255,255,255,0.22);
+
+    box-shadow:
+        0 20px 50px rgba(70,60,50,0.06);
+}
+
+.product-row {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    align-items: center;
+
+    padding: 21px 25px;
+
+    border-bottom:
+        1px solid rgba(120,105,90,0.18);
+
+    transition: 0.3s ease;
+}
+
+.product-row:last-child {
+    border-bottom: none;
+}
+
+.product-row:not(.product-heading):hover {
+    background: rgba(255,255,255,0.45);
+
+    transform: translateX(5px);
+}
+
+.product-heading {
+    background: rgba(190,175,158,0.18);
+
+    color: #756b62;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.product-row span {
+    display: flex;
+
+    align-items: center;
+
+    font-size: 14px;
+
+    color: #403a35;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 50px 30px;
+
+    background: #171513;
+
+    color: #aaa097;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.05);
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .report-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px 25px;
+    }
+
+    .page-title {
+        display: none;
+    }
+
+    .reports-dashboard {
+        padding:
+            60px 25px 80px;
+    }
+
+    .reports-intro {
+        min-height: 350px;
+
+        padding: 45px 30px;
+
+        border-radius: 0 0 25px 25px;
+    }
+
+    .reports-intro h1 {
+        font-size: 48px;
+    }
+
+    .report-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .product-table {
+        overflow-x: auto;
+    }
+
+    .product-row {
+        min-width: 550px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .reports-dashboard {
+        padding:
+            50px 18px 70px;
+    }
+
+    .reports-intro {
+        padding: 40px 25px;
+    }
+
+    .reports-intro h1 {
+        font-size: 40px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    #salesResult {
+        padding: 25px;
+    }
+
+}
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 90px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}

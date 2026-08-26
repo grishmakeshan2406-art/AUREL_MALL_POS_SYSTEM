@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="customer.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                CUSTOMER
+            </div>
+
+            <div class="customer-actions">
+
+                <a href="customer.html">
+                    Home
+                </a>
+
+                <a href="#shops">
+                    Shops
+                </a>
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+                <a href="index.html" class="mall-button">
+                    ← Mall
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="customer-dashboard">
+
+
+        <!-- ================= WELCOME ================= -->
+
+        <section class="customer-welcome">
+
+            <p class="small-text">
+                WELCOME TO SMARTGEN
+            </p>
+
+            <h1>
+                Your Shopping,
+                <br>
+                Smarter.
+            </h1>
+
+            <p>
+                Discover shops, explore products and
+                enjoy a smarter shopping experience.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <section class="customer-search">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search shops or products..."
+            >
+
+            <button
+                type="button"
+                onclick="searchItems()">
+                Search
+            </button>
+
+        </section>
+
+
+
+        <!-- ================= SHOPS ================= -->
+
+        <section id="shops">
+
+            <div class="section-title">
+
+                <p class="small-text">
+                    EXPLORE
+                </p>
+
+                <h2>
+                    Shops
+                </h2>
+
+                <p>
+                    Explore everything available inside SmartGen Mall.
+                </p>
+
+            </div>
+
+
+            <div class="shop-container">
+
+
+                <!-- FASHION -->
+
+                <div class="shop-card">
+
+                    <div class="shop-image">
+
+                        <img
+                            src="fashion.jpeg"
+                            alt="Fashion Shop"
+                        >
+
+                    </div>
+
+                    <div class="shop-content">
+
+                        <span class="shop-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Fashion
+                        </h3>
+
+                        <p>
+                            Clothing, accessories and
+                            everyday fashion.
+                        </p>
+
+                        <button
+                            class="shop-button"
+                            type="button"
+                            onclick="viewShop('Fashion')">
+
+                            View Shop
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ELECTRONICS -->
+
+                <div class="shop-card">
+
+                    <div class="shop-image">
+
+                        <img
+                            src="electronics.jpeg"
+                            alt="Electronics Shop"
+                        >
+
+                    </div>
+
+                    <div class="shop-content">
+
+                        <span class="shop-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Electronics
+                        </h3>
+
+                        <p>
+                            Phones, gadgets and
+                            electronic accessories.
+                        </p>
+
+                        <button
+                            class="shop-button"
+                            type="button"
+                            onclick="viewShop('Electronics')">
+
+                            View Shop
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LIFESTYLE -->
+
+                <div class="shop-card">
+
+                    <div class="shop-image">
+
+                        <img
+                            src="lifestyle.jpeg"
+                            alt="Lifestyle Shop"
+                        >
+
+                    </div>
+
+                    <div class="shop-content">
+
+                        <span class="shop-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Lifestyle
+                        </h3>
+
+                        <p>
+                            Home, beauty and
+                            lifestyle products.
+                        </p>
+
+                        <button
+                            class="shop-button"
+                            type="button"
+                            onclick="viewShop('Lifestyle')">
+
+                            View Shop
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FOOD -->
+
+                <div class="shop-card">
+
+                    <div class="shop-image">
+
+                        <img
+                            src="cafe.jpeg"
+                            alt="Food and Cafe"
+                        >
+
+                    </div>
+
+                    <div class="shop-content">
+
+                        <span class="shop-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Food & Cafe
+                        </h3>
+
+                        <p>
+                            Snacks, beverages and
+                            dining options.
+                        </p>
+
+                        <button
+                            class="shop-button"
+                            type="button"
+                            onclick="viewShop('Food & Cafe')">
+
+                            View Shop
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <section id="products">
+
+            <div class="section-title">
+
+                <p class="small-text">
+                    FEATURED
+                </p>
+
+                <h2>
+                    Products
+                </h2>
+
+                <p>
+                    Popular products from different shops.
+                </p>
+
+            </div>
+
+
+            <div class="product-container">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="classictshirt.jpeg"
+                            alt="Classic T-Shirt"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Classic T-Shirt
+                    </h3>
+
+                    <p>
+                        Fashion
+                    </p>
+
+                    <strong class="product-price">
+                        ₹899
+                    </strong>
+
+                    <button
+                        class="product-button"
+                        type="button"
+                        onclick="viewProduct('Classic T-Shirt')">
+
+                        View Product
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="buds.jpeg"
+                            alt="Wireless Earbuds"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Wireless Earbuds
+                    </h3>
+
+                    <p>
+                        Electronics
+                    </p>
+
+                    <strong class="product-price">
+                        ₹1,999
+                    </strong>
+
+                    <button
+                        class="product-button"
+                        type="button"
+                        onclick="viewProduct('Wireless Earbuds')">
+
+                        View Product
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="watch.jpEg"
+                            alt="Smart Watch"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Smart Watch
+                    </h3>
+
+                    <p>
+                        Electronics
+                    </p>
+
+                    <strong class="product-price">
+                        ₹2,499
+                    </strong>
+
+                    <button
+                        class="product-button"
+                        type="button"
+                        onclick="viewProduct('Smart Watch')">
+
+                        View Product
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- PRODUCT 4 -->
+
+                <div class="product-card">
+
+                    <div class="product-image">
+
+                        <img
+                            src="totebag.jpEg"
+                            alt="Tote Bag"
+                        >
+
+                    </div>
+
+                    <h3>
+                        Tote Bag
+                    </h3>
+
+                    <p>
+                        Lifestyle
+                    </p>
+
+                    <strong class="product-price">
+                        ₹699
+                    </strong>
+
+                    <button
+                        class="product-button"
+                        type="button"
+                        onclick="viewProduct('Tote Bag')">
+
+                        View Product
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CART ================= -->
+
+        <section class="cart-section">
+
+            <div>
+
+                <p class="small-text">
+                    YOUR SHOPPING
+                </p>
+
+                <h2>
+                    Your Cart
+                </h2>
+
+                <p id="cartCount">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+            <a
+                href="cart.html"
+                class="cart-button">
+
+                View Cart
+                <span>→</span>
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="customer.js"></script>
+
+</body>
+
+</html>

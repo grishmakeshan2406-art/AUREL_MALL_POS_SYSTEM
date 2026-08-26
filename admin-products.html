@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Management | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="admin-products.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                PRODUCT MANAGEMENT
+            </div>
+
+            <a href="admin.html" class="back-button">
+                ← Admin Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-products">
+
+
+        <!-- INTRO -->
+
+        <section class="products-intro">
+
+            <p class="small-text">
+                MALL ADMIN
+            </p>
+
+            <h1>
+                Product Management
+            </h1>
+
+            <p>
+                Monitor and manage products listed by
+                shops across SmartGen Mall.
+            </p>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="product-summary">
+
+
+            <div class="summary-card">
+
+                <p>
+                    TOTAL PRODUCTS
+                </p>
+
+                <h2 id="totalProducts">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    IN STOCK
+                </p>
+
+                <h2 id="inStock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    LOW STOCK
+                </p>
+
+                <h2 id="lowStock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    OUT OF STOCK
+                </p>
+
+                <h2 id="outOfStock">
+                    0
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ADD PRODUCT -->
+
+        <section class="add-product-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-text">
+                        MANAGEMENT
+                    </p>
+
+                    <h2 id="formTitle">
+                        Add New Product
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <form id="productForm">
+
+
+                <input
+                    type="hidden"
+                    id="editingProductId"
+                >
+
+
+                <div class="form-row">
+
+
+                    <!-- PRODUCT NAME -->
+
+                    <div class="form-group">
+
+                        <label for="productName">
+                            Product Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="productName"
+                            placeholder="Enter product name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- SHOP -->
+
+                    <div class="form-group">
+
+                        <label for="productShop">
+                            Shop
+                        </label>
+
+                        <select
+                            id="productShop"
+                            required
+                        >
+
+                            <option value="">
+                                Select shop
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="productCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="productCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Fashion">
+                                Fashion
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Lifestyle">
+                                Lifestyle
+                            </option>
+
+                            <option value="Food & Cafe">
+                                Food & Cafe
+                            </option>
+
+                            <option value="Beauty">
+                                Beauty
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="form-row">
+
+
+                    <!-- PRICE -->
+
+                    <div class="form-group">
+
+                        <label for="productPrice">
+                            Price
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            placeholder="Enter price"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- STOCK -->
+
+                    <div class="form-group">
+
+                        <label for="productStock">
+                            Stock
+                        </label>
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            placeholder="Enter stock quantity"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="form-buttons">
+
+                        <button
+                            type="submit"
+                            class="add-button"
+                            id="submitButton"
+                        >
+                            + Add Product
+                        </button>
+
+                        <button
+                            type="button"
+                            class="cancel-button"
+                            id="cancelButton"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- PRODUCT LIST -->
+
+        <section class="products-section">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p class="small-text">
+                        PRODUCT INVENTORY
+                    </p>
+
+                    <h2>
+                        All Products
+                    </h2>
+
+                </div>
+
+
+                <span id="productCount">
+                    0 products
+                </span>
+
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="product-controls">
+
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search products..."
+                >
+
+
+               <select id="stockFilter">
+
+              <option value="all">
+                 All Stock
+             </option>
+
+                 <option value="In Stock">
+                 In Stock
+                 </option>
+
+                 <option value="Low Stock">
+                     Low Stock
+                  </option>
+
+                 <option value="Out of Stock">
+                      Out of Stock
+                         </option>
+
+                </select>
+
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Fashion">
+                        Fashion
+                    </option>
+
+                    <option value="Electronics">
+                        Electronics
+                    </option>
+
+                    <option value="Lifestyle">
+                        Lifestyle
+                    </option>
+
+                    <option value="Food & Cafe">
+                        Food & Cafe
+                    </option>
+
+                    <option value="Beauty">
+                        Beauty
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+            <!-- PRODUCTS -->
+
+            <div
+                id="productsContainer"
+                class="products-container"
+            >
+            </div>
+
+
+
+            <!-- EMPTY -->
+
+            <div
+                id="emptyProducts"
+                class="empty-products"
+            >
+
+                <h3>
+                    No products found
+                </h3>
+
+                <p>
+                    Add a product or change your search filters.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="admin-products.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,850 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eee9e1;
+    color: #24211e;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding: 25px 55px;
+
+    background: rgba(238, 233, 225, 0.78);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(36, 33, 30, 0.1);
+}
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.logo img {
+    width: 90px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
+.page-title {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #90765c;
+}
+
+.back-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 20px;
+
+    border: 1px solid #b8aa9b;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    color: #4c4741;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transition: 0.35s ease;
+}
+
+.back-button:hover {
+    background: #24211e;
+
+    color: #eee9e1;
+
+    transform: translateX(-5px);
+}
+
+
+/* ================= DASHBOARD ================= */
+
+.owner-dashboard {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 80px 50px 100px;
+}
+
+
+/* ================= OWNER HERO ================= */
+
+.owner-welcome {
+    position: relative;
+
+    min-height: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+
+    margin-bottom: 70px;
+
+    overflow: hidden;
+
+    color: white;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(36, 33, 30, 0.88),
+            rgba(36, 33, 30, 0.55),
+            rgba(36, 33, 30, 0.25)
+        ),
+        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    box-shadow:
+        0 25px 60px rgba(50, 42, 35, 0.15);
+
+    animation: ownerHeroEnter 1s ease forwards;
+}
+
+
+/* ================= HERO IMAGE ZOOM ================= */
+
+.owner-welcome::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -10px;
+
+    background:
+        url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: 0;
+
+    animation:
+        ownerHeroZoom
+        14s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+/* ================= HERO OVERLAY ================= */
+
+.owner-welcome::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(36, 33, 30, 0.9),
+            rgba(36, 33, 30, 0.45),
+            rgba(36, 33, 30, 0.15)
+        );
+
+    z-index: 1;
+}
+
+
+/* ================= HERO CONTENT ================= */
+
+.owner-welcome > * {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ================= HERO ANIMATIONS ================= */
+
+@keyframes ownerHeroEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes ownerHeroZoom {
+
+    from {
+        transform: scale(1.03);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+
+}
+
+
+/* ================= HERO LABEL ================= */
+
+.owner-welcome .small-text {
+    font-size: 10px;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    color: #d2b894;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================= HERO TITLE ================= */
+
+.owner-welcome h1 {
+    font-size: clamp(48px, 6vw, 78px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= HERO DESCRIPTION ================= */
+
+.owner-welcome > p:last-child {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= SUMMARY ================= */
+
+.owner-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 90px;
+
+    animation:
+        fadeUp
+        0.8s
+        ease
+        0.15s
+        both;
+}
+
+
+/* ================= SUMMARY CARD ================= */
+
+.summary-card {
+    position: relative;
+
+    padding: 30px;
+
+    min-height: 155px;
+
+    border: 1px solid #c8bdb1;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.45),
+            rgba(215, 208, 198, 0.25)
+        );
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+
+    box-shadow:
+        0 15px 40px rgba(70, 60, 50, 0.06);
+}
+
+.summary-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    right: -70px;
+
+    top: -70px;
+
+    background:
+        rgba(155, 128, 101, 0.12);
+
+    filter: blur(25px);
+
+    transition: 0.5s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #a9947e;
+
+    box-shadow:
+        0 20px 45px rgba(70, 60, 50, 0.11);
+}
+
+.summary-card:hover::before {
+    transform: scale(1.4);
+}
+
+.summary-card p {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #756b62;
+
+    margin-bottom: 20px;
+}
+
+.summary-card h2 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    color: #28231e;
+}
+
+
+/* ================= FEATURES ================= */
+
+.owner-features {
+    margin-bottom: 90px;
+
+    animation:
+        fadeUp
+        0.8s
+        ease
+        0.25s
+        both;
+}
+
+.owner-features > h2,
+.transactions > h2 {
+    font-size: 35px;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= FEATURE CONTAINER ================= */
+
+.feature-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* ================= FEATURE CARD ================= */
+
+.feature-card {
+    min-height: 300px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 1px solid #c5baae;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d8d0c4,
+            #c7bdb1
+        );
+
+    transition: 0.45s ease;
+}
+
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    right: -110px;
+
+    top: -110px;
+
+    background:
+        rgba(155, 128, 101, 0.16);
+
+    filter: blur(35px);
+
+    transition: 0.5s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-9px);
+
+    border-color: #9b8065;
+
+    box-shadow:
+        0 25px 55px rgba(65, 55, 45, 0.14);
+}
+
+.feature-card:hover::before {
+    transform: scale(1.5);
+}
+
+
+/* ================= FEATURE CONTENT ================= */
+
+.feature-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+}
+
+.feature-card p {
+    position: relative;
+
+    z-index: 2;
+
+    color: #665d55;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    max-width: 250px;
+}
+
+
+/* ================= DASHBOARD BUTTON ================= */
+
+.dashboard-button {
+    position: relative;
+
+    z-index: 2;
+
+    align-self: flex-start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 12px 17px;
+
+    border: 1px solid rgba(36, 33, 30, 0.4);
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    color: #24211e;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transition: 0.35s ease;
+}
+
+.dashboard-button span {
+    transition: 0.35s ease;
+}
+
+.dashboard-button:hover {
+    background: #24211e;
+
+    color: #eee9e1;
+
+    border-color: #24211e;
+
+    transform: translateY(-3px);
+}
+
+.dashboard-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ================= TRANSACTIONS ================= */
+
+.transactions {
+    animation:
+        fadeUp
+        0.8s
+        ease
+        0.35s
+        both;
+}
+
+.transaction-table {
+    border: 1px solid #c5baae;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.22);
+
+    box-shadow:
+        0 20px 50px rgba(70, 60, 50, 0.06);
+}
+
+.transaction-row {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    align-items: center;
+
+    padding: 21px 25px;
+
+    border-bottom:
+        1px solid rgba(120, 105, 90, 0.18);
+
+    transition: 0.3s ease;
+}
+
+.transaction-row:last-child {
+    border-bottom: none;
+}
+
+.transaction-row:not(.transaction-heading):hover {
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    transform: translateX(5px);
+}
+
+.transaction-heading {
+    background:
+        rgba(190, 175, 158, 0.18);
+
+    color: #756b62;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.transaction-row span {
+    font-size: 14px;
+}
+
+.transaction-row:not(.transaction-heading)
+span:last-child {
+    color: #806a52;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 50px 30px;
+
+    background: #171513;
+
+    color: #aaa097;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* ================= GLOBAL ANIMATION ================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ================= RESPONSIVE 1000PX ================= */
+
+@media (max-width: 1000px) {
+
+    .owner-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .feature-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================= RESPONSIVE 700PX ================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px 25px;
+    }
+
+    .page-title {
+        display: none;
+    }
+
+    .owner-dashboard {
+        padding:
+            60px 25px 80px;
+    }
+
+    .owner-welcome {
+        min-height: 380px;
+
+        padding: 45px 30px;
+
+        margin-bottom: 50px;
+
+        border-radius: 24px;
+    }
+
+    .owner-welcome h1 {
+        font-size: 48px;
+    }
+
+    .owner-welcome > p:last-child {
+        font-size: 15px;
+    }
+
+    .owner-summary {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 70px;
+    }
+
+    .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: 260px;
+    }
+
+    .transaction-table {
+        overflow-x: auto;
+    }
+
+    .transaction-row {
+        min-width: 650px;
+    }
+
+}
+
+
+/* ================= RESPONSIVE 450PX ================= */
+
+@media (max-width: 450px) {
+
+    header {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+
+        letter-spacing: 4px;
+    }
+
+    .back-button {
+        padding: 9px 14px;
+
+        font-size: 12px;
+    }
+
+    .owner-dashboard {
+        padding:
+            50px 18px 70px;
+    }
+
+    .owner-welcome {
+        min-height: 360px;
+
+        padding: 40px 25px;
+
+        margin-bottom: 45px;
+
+        border-radius: 22px;
+    }
+
+    .owner-welcome .small-text {
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+    .owner-welcome h1 {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+    .owner-welcome > p:last-child {
+        font-size: 14px;
+    }
+
+    .owner-features > h2,
+    .transactions > h2 {
+        font-size: 28px;
+    }
+
+    .summary-card {
+        min-height: 140px;
+
+        padding: 25px;
+    }
+
+}

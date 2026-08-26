@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="inventory.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                 <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                Inventory
+            </div>
+
+            <a href="shopowner.html" class="back-button">
+                ← Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="inventory-dashboard">
+
+
+        <!-- INTRO -->
+
+        <section class="inventory-intro">
+
+            <p class="section-label">
+                SHOP MANAGEMENT
+            </p>
+
+            <h1>
+                Inventory
+            </h1>
+
+            <p>
+                Monitor your stock levels and keep your
+                products available for customers.
+            </p>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="inventory-summary">
+
+            <div class="summary-card">
+
+                <p>
+                    Total Products
+                </p>
+
+                <h2 id="total-products">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    In Stock
+                </p>
+
+                <h2 id="in-stock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Low Stock
+                </p>
+
+                <h2 id="low-stock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Out of Stock
+                </p>
+
+                <h2 id="out-stock">
+                    0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INVENTORY -->
+
+        <section class="inventory-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-label">
+                        STOCK OVERVIEW
+                    </p>
+
+                    <h2>
+                        Your Products
+                    </h2>
+
+                </div>
+
+
+                <div class="inventory-actions">
+
+                    <input
+                        type="text"
+                        id="search-product"
+                        placeholder="Search products..."
+                    >
+
+                    <select id="stock-filter">
+
+                        <option value="all">
+                            All Products
+                        </option>
+
+                        <option value="in-stock">
+                            In Stock
+                        </option>
+
+                        <option value="low-stock">
+                            Low Stock
+                        </option>
+
+                        <option value="out-stock">
+                            Out of Stock
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="inventory-table">
+
+                <div class="inventory-row table-heading">
+
+                    <span>
+                        Product
+                    </span>
+
+                    <span>
+                        Category
+                    </span>
+
+                    <span>
+                        Price
+                    </span>
+
+                    <span>
+                        Stock
+                    </span>
+
+                    <span>
+                        Status
+                    </span>
+
+                    <span>
+                        Action
+                    </span>
+
+                </div>
+
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="inventory-row product-row">
+
+                    <span>
+                        Classic T-Shirt
+                    </span>
+
+                    <span>
+                        Clothing
+                    </span>
+
+                    <span>
+                        ₹899
+                    </span>
+
+                    <span class="stock">
+                        25
+                    </span>
+
+                    <span class="status in-stock-status">
+                        In Stock
+                    </span>
+
+                    <span class="stock-buttons">
+
+                        <button class="decrease">
+                            −
+                        </button>
+
+                        <button class="increase">
+                            +
+                        </button>
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="inventory-row product-row">
+
+                    <span>
+                        Running Shoes
+                    </span>
+
+                    <span>
+                        Footwear
+                    </span>
+
+                    <span>
+                        ₹2,499
+                    </span>
+
+                    <span class="stock">
+                        8
+                    </span>
+
+                    <span class="status low-stock-status">
+                        Low Stock
+                    </span>
+
+                    <span class="stock-buttons">
+
+                        <button class="decrease">
+                            −
+                        </button>
+
+                        <button class="increase">
+                            +
+                        </button>
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="inventory-row product-row">
+
+                    <span>
+                        Leather Wallet
+                    </span>
+
+                    <span>
+                        Accessories
+                    </span>
+
+                    <span>
+                        ₹1,299
+                    </span>
+
+                    <span class="stock">
+                        0
+                    </span>
+
+                    <span class="status out-stock-status">
+                        Out of Stock
+                    </span>
+
+                    <span class="stock-buttons">
+
+                        <button class="decrease">
+                            −
+                        </button>
+
+                        <button class="increase">
+                            +
+                        </button>
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- PRODUCT 4 -->
+
+                <div class="inventory-row product-row">
+
+                    <span>
+                        Smart Watch
+                    </span>
+
+                    <span>
+                        Electronics
+                    </span>
+
+                    <span>
+                        ₹3,999
+                    </span>
+
+                    <span class="stock">
+                        42
+                    </span>
+
+                    <span class="status in-stock-status">
+                        In Stock
+                    </span>
+
+                    <span class="stock-buttons">
+
+                        <button class="decrease">
+                            −
+                        </button>
+
+                        <button class="increase">
+                            +
+                        </button>
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="inventory.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop Management | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="admin-shops.css">
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                SHOP MANAGEMENT
+            </div>
+
+            <a href="admin.html" class="back-button">
+                ← Admin Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-shops">
+
+
+        <!-- INTRO -->
+
+        <section class="shops-intro">
+
+            <p class="small-text">
+                MALL ADMIN
+            </p>
+
+            <h1>
+                Shop Management
+            </h1>
+
+            <p>
+                Manage shops, owners and their activity
+                across SmartGen Mall.
+            </p>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="shop-summary">
+
+            <div class="summary-card">
+
+                <p>
+                    Total Shops
+                </p>
+
+                <h2 id="totalShops">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Active Shops
+                </p>
+
+                <h2 id="activeShops">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    Inactive Shops
+                </p>
+
+                <h2 id="inactiveShops">
+                    0
+                </h2>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ADD SHOP -->
+
+        <section class="add-shop-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-text">
+                        MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Add New Shop
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form id="shopForm">
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="shopName">
+                            Shop Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="shopName"
+                            placeholder="Enter shop name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="shopCategory">
+                            Category
+                        </label>
+
+                        <select id="shopCategory" required>
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                            <option value="Fashion">
+                                Fashion
+                            </option>
+
+                            <option value="Electronics">
+                                Electronics
+                            </option>
+
+                            <option value="Lifestyle">
+                                Lifestyle
+                            </option>
+
+                            <option value="Food & Cafe">
+                                Food & Cafe
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="shopOwner">
+                            Shop Owner
+                        </label>
+
+                        <input
+                            type="text"
+                            id="shopOwner"
+                            placeholder="Enter owner name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="add-button"
+                >
+                    + Add Shop
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- SHOP LIST -->
+
+        <section class="shops-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-text">
+                        REGISTERED SHOPS
+                    </p>
+
+                    <h2>
+                        All Shops
+                    </h2>
+
+                </div>
+
+                <span id="shopCount">
+                    0 shops
+                </span>
+
+            </div>
+
+
+            <div id="shopsContainer"
+                 class="shops-container">
+            </div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div id="emptyShops"
+                 class="empty-shops">
+
+                <h3>
+                    No shops registered
+                </h3>
+
+                <p>
+                    Add your first shop using the form above.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="admin-shops.js"></script>
+
+</body>
+
+</html>

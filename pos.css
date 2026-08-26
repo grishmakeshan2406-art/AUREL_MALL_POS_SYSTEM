@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* HEADER */
+
+header {
+    padding: 25px 60px;
+    border-bottom: 1px solid #222;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.page-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+.back-button {
+    padding: 10px 20px;
+    border: 1px solid #444;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* MAIN */
+
+.pos-page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 70px 50px;
+}
+
+
+/* INTRO */
+
+.pos-intro {
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    opacity: 0.5;
+    margin-bottom: 15px;
+}
+
+.pos-intro h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.pos-intro > p:last-child {
+    opacity: 0.5;
+    font-size: 17px;
+}
+
+
+/* POS CONTAINER */
+
+.pos-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+
+/* PRODUCTS */
+
+.pos-products,
+.pos-cart {
+    border: 1px solid #292929;
+    border-radius: 24px;
+    padding: 30px;
+}
+
+.pos-section-heading,
+.cart-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 30px;
+}
+
+.pos-section-heading h2,
+.cart-heading h2 {
+    font-size: 30px;
+}
+
+.cart-heading > span {
+    opacity: 0.5;
+    font-size: 13px;
+}
+
+
+/* PRODUCT LIST */
+
+.pos-product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.pos-product-card {
+    border: 1px solid #292929;
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.pos-product-card:hover {
+    transform: translateY(-4px);
+}
+
+.pos-product-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.pos-product-card p {
+    font-size: 13px;
+    opacity: 0.5;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.product-stock {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #444;
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* CART */
+
+.cart-items {
+    min-height: 200px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.empty-cart {
+    padding: 80px 20px;
+    text-align: center;
+    opacity: 0.4;
+}
+
+
+/* CART ITEM */
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid #222;
+}
+
+.cart-item h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.cart-item p {
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.remove-item {
+    border: none;
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+/* BILL */
+
+.bill-summary {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #292929;
+}
+
+.bill-summary > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.bill-total {
+    padding-top: 15px;
+    border-top: 1px solid #292929;
+    font-size: 20px !important;
+    opacity: 1 !important;
+}
+
+.generate-bill-button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #222;
+    padding: 30px;
+    text-align: center;
+    opacity: 0.5;
+    font-size: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .pos-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 20px 25px;
+    }
+
+    .pos-page {
+        padding: 50px 25px;
+    }
+
+    .pos-intro h1 {
+        font-size: 45px;
+    }
+
+    .pos-product-list {
+        grid-template-columns: 1fr;
+    }
+
+}

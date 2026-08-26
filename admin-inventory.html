@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory Management | SmartGen Mall</title>
+
+    <link rel="stylesheet" href="admin-inventory.css">
+
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+
+            <div class="page-title">
+                INVENTORY MANAGEMENT
+            </div>
+
+            <a href="admin.html" class="back-button">
+                ← Admin Dashboard
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-inventory">
+
+
+        <!-- INTRO -->
+
+        <section class="inventory-intro">
+
+            <p class="small-text">
+                MALL ADMIN
+            </p>
+
+            <h1>
+                Inventory Management
+            </h1>
+
+            <p>
+                Monitor product stock levels across all
+                SmartGen Mall shops and identify products
+                that need attention.
+            </p>
+
+        </section>
+
+
+
+        <!-- SUMMARY -->
+
+        <section class="inventory-summary">
+
+
+            <div class="summary-card">
+
+                <p>
+                    TOTAL PRODUCTS
+                </p>
+
+                <h2 id="totalProducts">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    IN STOCK
+                </p>
+
+                <h2 id="inStock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    LOW STOCK
+                </p>
+
+                <h2 id="lowStock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    OUT OF STOCK
+                </p>
+
+                <h2 id="outOfStock">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <p>
+                    INVENTORY VALUE
+                </p>
+
+                <h2 id="inventoryValue">
+                    ₹0
+                </h2>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- CONTROLS -->
+
+        <section class="inventory-controls">
+
+
+            <input
+                type="text"
+                id="inventorySearch"
+                placeholder="Search product or shop..."
+            >
+
+
+            <select id="stockFilter">
+
+                <option value="All">
+                    All Stock
+                </option>
+
+                <option value="In Stock">
+                    In Stock
+                </option>
+
+                <option value="Low Stock">
+                    Low Stock
+                </option>
+
+                <option value="Out of Stock">
+                    Out of Stock
+                </option>
+
+            </select>
+
+
+            <select id="shopFilter">
+
+                <option value="All">
+                    All Shops
+                </option>
+
+            </select>
+
+
+        </section>
+
+
+
+        <!-- INVENTORY -->
+
+        <section class="inventory-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-text">
+                        STOCK MONITORING
+                    </p>
+
+                    <h2>
+                        Product Inventory
+                    </h2>
+
+                </div>
+
+
+                <span id="productCount">
+                    0 products
+                </span>
+
+            </div>
+
+
+
+            <div
+                id="inventoryContainer"
+                class="inventory-container">
+            </div>
+
+
+
+            <!-- EMPTY -->
+
+            <div
+                id="emptyInventory"
+                class="empty-inventory">
+
+                <h3>
+                    No inventory found
+                </h3>
+
+                <p>
+                    Products will appear here when they are added.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 SmartGen Mall. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <script src="admin-inventory.js"></script>
+
+</body>
+
+</html>
